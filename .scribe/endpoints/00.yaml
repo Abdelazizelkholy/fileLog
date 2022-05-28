@@ -1,0 +1,38 @@
+name: Authentication
+description: |-
+
+  API endpoints for managing files
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/readFile
+    metadata:
+      title: 'Read File'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      url:
+        name: url
+        description: ''
+        required: true
+        example: auth.log
+        type: string
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "May 23 12:09:01 abdelaziz CRON[1412]: pam_unix(cron:session): session opened for user root by (uid=0)",
+                "May 23 12:09:01 abdelaziz CRON[1412]: pam_unix(cron:session): session closed for user root"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
