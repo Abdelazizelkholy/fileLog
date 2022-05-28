@@ -4,21 +4,21 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\Request;
 use Tests\TestCase;
 
-class ReadFile extends TestCase
+class ReadFileTest extends TestCase
 {
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_example()
+    public function test_read_file()
     {
-        $response = $this->get('api/readFile');
+
+        $response =  $this->get('/api/v1/readFile?url=auth.log');
 
         $response->assertStatus(200);
-        $response->assertSee('File');
-        $response->assertDontSee('Not Exists ');
     }
 }
